@@ -28,5 +28,5 @@ python simplicial_closure.py --dataname email-Enron --epochs 20 --lr 1e-3 --wd 0
 python graph_classification.py --dataname proteins --epochs 5 --lr 1e-3 --wd 0 --dim 4 --alpha 0.5 --snn MPSN --delta 10 --rho 0.1
 
 # Trajectory prediction example
-python graph_classification.py --epochs 5 --lr 1e-3 --wd 0 --dim 4 --alpha 0.5 --delta 10 --rho 0.1
+python tp_ocean.py --epochs 5 --lr 1e-3 --wd 0 --dim 4 --alpha 0.5 --delta 10 --rho 0.1
 ```
