@@ -82,7 +82,7 @@ def get_boundary_matrices(data, dim):
   simplex_tree, sc, indices, labels = get_simplicies(data, dim)
   boundry_matrices = []
   for i in range(1,dim+1):
-      print(f"Computing boundary matrice for dimension {i}")
+      print(f"Computing boundary matrix for dimension {i}")
       boundry_matrix = np.zeros((len(sc[i-1]),len(sc[i])), dtype=bool)
       for m,j in enumerate(sc[i]):
         idx = np.arange(1, i+1) - np.tri(i+1, i, k=-1, dtype=bool)
