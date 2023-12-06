@@ -73,7 +73,7 @@ def get_simplicies(data,dim):
     print("Creating tree")
     for i in simplicies:
         if len(i)<=dim+1:
-            simplex_tree.insert(i)
+            simplex_tree.insert(np.array(i)-1)
     simplex_tree.prune_above_dimension(dim)
     simplex_tree, sc, indices = process_simplex_tree(simplex_tree, num_nodes)
     return simplex_tree, sc, indices, labels

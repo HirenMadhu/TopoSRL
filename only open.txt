@@ -1,0 +1,5 @@
+Namespace(dataname='contact-high-school', gpu=0, epochs=20, lr=0.001, wd=0.0, dim=4, alpha=1.0, snn='MPSN', delta=5, augmentation='open', rho=0.1, device='cuda:0')
+Namespace(dataname='contact-high-school', gpu=0, epochs=20, lr=0.001, wd=0.0, dim=4, alpha=1.0, snn='MPSN', delta=5, augmentation='open', rho=0.1, device='cuda:0')
+Namespace(dataname='contact-high-school', gpu=1, epochs=20, lr=0.001, wd=0.0, dim=4, alpha=1.0, snn='MPSN', delta=5, augmentation='open', rho=0.1, device='cuda:1')
+Namespace(dataname='contact-high-school', gpu=1, epochs=20, lr=0.001, wd=0.0, dim=4, alpha=1.0, snn='MPSN', delta=5, augmentation='open', rho=0.1, device='cuda:1')
+Namespace(dataname='contact-high-school', gpu=1, epochs=5, lr=0.001, wd=0.0, dim=4, alpha=1.0, snn='MPSN', delta=5, augmentation='open', rho=0.1, device='cuda:1')

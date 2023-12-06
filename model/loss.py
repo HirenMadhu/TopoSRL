@@ -31,10 +31,10 @@ def l_sub(X1, X2, W, closure=False):
     loss = 0
     for i in range(len(X1)):
         dist_bet = torch.cdist(X1[i], X2[i], p=2)
-        if(i==0 and not closure):
-            loss += torch.trace(dist_bet[1:,1:].T@W[i])
-        else:
-            loss += torch.trace(dist_bet.T@W[i])
+        #if(i==0 and not closure):
+        #    loss += torch.trace(dist_bet[1:,1:].T@W[i])
+        #else:
+        loss += torch.trace(dist_bet.T@W[i])
     return loss
 
 def l_rel(X1, X2, delta, W, device, closure = False):

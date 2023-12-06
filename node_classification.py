@@ -75,7 +75,7 @@ if __name__ == '__main__':
         model = SAN(feature_size, 10*feature_size, 20*feature_size, args.dim-1, agg='sum').to(args.device)
     else:
         raise TypeError("Enter correct option for SNN encder. The three available options are:\n(1) MPSN\n(2)SCNN\n(3)SAN")
-    opt = torch.optim.Adam(model.parameters(), lr = args.lr1, weight_decay=args.wd2)
+    opt = torch.optim.Adam(model.parameters(), lr = args.lr, weight_decay=args.wd)
 
     for epoch in range(args.epochs):
         print('Training epoch: ', epoch)
@@ -109,8 +109,12 @@ if __name__ == '__main__':
         gc.collect()
         if(args.alpha>0):
             L_sub = args.alpha * l_sub(outputs1, outputs2, [W0, W1, W2])
+        else:
+            L_sub=0
         if(args.alpha<1):
             L_rel = (1-args.alpha) * l_rel(outputs1, outputs2, args.delta, [W0, W1, W2], args.device)
+        else:
+            L_rel=0
         loss = L_sub + L_rel
         loss.backward()
         opt.step()
@@ -121,7 +125,7 @@ if __name__ == '__main__':
     
     num_class = len(np.unique(labels))
 
-    X = model(_X,boundry_matrices,laplacians,upper_laplacians,lower_laplacians)[0][1:].cpu().detach().numpy()
+    X = model(_X,boundry_matrices,laplacians,upper_laplacians,lower_laplacians)[0].cpu().detach().numpy()
     
     accuracies = []
     for i in range(10):
